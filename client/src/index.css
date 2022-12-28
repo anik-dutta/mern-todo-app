@@ -1,0 +1,209 @@
+:root {
+	--red: #c20505de;
+	--blue: #1f58f7;
+	--light: #eee;
+	--gold: #D4AF37;
+	--gold-alt: #f7cb5c;
+	--dark: #060216;
+	--green: #09f809
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Fira Sans", sans-serif
+}
+
+body {
+	background: url(https://www.transparenttextures.com/patterns/bo-play.png) var(--dark);
+	color: var(--gold)
+}
+
+.App {
+	padding: 35px 60px
+}
+
+h1 {
+	font-size: 40px;
+	margin-bottom: 32px;
+	text-align: center
+}
+
+h2 {
+	margin-bottom: 16px;
+	text-align: center
+}
+
+h3 {
+	font-weight: 400;
+	margin-bottom: 20px;
+	text-align: center
+}
+
+.todo {
+	position: relative;
+	background-image: linear-gradient(to bottom, var(--gold), var(--gold-alt));
+	padding: 16px;
+	border-radius: 16px;
+	display: flex;
+	min-height: 60px;
+	align-items: center;
+	transition: 0.5s;
+	margin-bottom: 16px;
+	color: var(--dark);
+	box-shadow: 0 5px 15px var(--green)
+}
+
+.todo:hover {
+	font-weight: 700
+}
+
+.todo .checkbox {
+	position: absolute;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin-right: 16px;
+	border-radius: 50%;
+	background-color: var(--dark);
+	transition: 0.4s
+}
+
+.todo.is-complete .checkbox {
+	background-color: var(--red);
+	box-shadow: 0 2px 15px var(--red);
+	border-style: groove
+}
+
+.todo .text {
+	position: inline-block;
+	font-size: 22px;
+	text-transform: capitalize;
+	margin: 0 92px 0 32px;
+	line-height: 28px
+}
+
+.todo.is-complete .text {
+	color: var(--red);
+	text-decoration: line-through;
+	font-style: italic
+}
+
+.todo .delete-todo,
+.todo .edit-todo {
+	cursor: pointer;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	color: var(--light);
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-style: groove;
+	border: var(--blue)
+}
+
+.todo .delete-todo {
+	right: 16px;
+	background-color: var(--red);
+	font-size: 28px;
+	padding-top: 3px
+}
+
+.todo .edit-todo {
+	right: 60px;
+	background-color: var(--green);
+	font-size: 18px;
+	padding-left: 1px
+}
+
+.addPopup {
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	font-size: 40px;
+	background-image: linear-gradient(to bottom, var(--gold), var(--gold-alt));
+	cursor: pointer;
+	border: var(--light);
+	border-style: groove;
+	box-shadow: 0 1px 12px var(--gold)
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--light);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0 3px 20px var(--gold)
+}
+
+.closePopup {
+	position: absolute;
+	top: 10px;
+	right: 16px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-size: 25px;
+	color: var(--red);
+	cursor: pointer
+}
+
+.add-todo-input,
+.edit-input {
+	appearance: none;
+	outline: none;
+	border: none;
+	font-size: 20px
+}
+
+.add-todo-input {
+	padding: 16px;
+	width: 100%;
+	box-shadow: 0 2px 10px var(--green);
+	border-radius: 16px
+}
+
+.edit-input {
+	position: absolute;
+	top: 13%;
+	padding: 10px;
+	border-radius: 6px;
+	right: 110px;
+	left: 45px;
+	background-color: silver
+}
+
+.btn-create {
+	padding: 16px 32px;
+	border-radius: 999px;
+	background-image: linear-gradient(to right, var(--red), var(--blue));
+	display: inline-block;
+	font-weight: 700;
+	color: var(--light);
+	font-size: 18px;
+	margin-top: 16px;
+	text-align: center;
+	cursor: pointer;
+	border: none
+}
+
+.errorBox {
+	justify-content: center;
+	font-size: 36px
+}
